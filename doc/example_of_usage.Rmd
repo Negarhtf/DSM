@@ -1,0 +1,46 @@
+---
+title: "example_of_usage"
+authors: "Fatemeh Hateffard,Luc Steinbuch"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{example_of_usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+The goal of DSM package is to run several steps required for digital soil mapping. First, it takes observations and environmental covariates of an area, overlays the points with the same coordinates, and trains a Random Forest model.
+In order to follow this tutorial, I assume that the reader is familiar with the basics of predictive modelling. For the first step, we need to have environmental covariates of the area and obsevrations with coordinates. 
+
+### How to start
+load your data in the environment or use the saved data in the current package. 
+"df_Ke_Cl" is the observations, and "Ke_covariates" are the covariates of the Kenya. In the first step, we overlay points with their attributed environmental covariates by "obs_cov_overlay" function.
+
+```{r setup}
+library(DSM)
+
+#overlay
+m <- obs_cov_overlay(df_Ke_Cl,Ke_covariates)
+
+```
+and here you have the result, checking the dimension of the output
+
+```{r }
+dim(m)
+```
+
+
+and here you can check the head of the result
+
+```{r print}
+head(m[1:5])
+```
+
+
