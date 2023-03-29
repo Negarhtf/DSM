@@ -16,7 +16,7 @@ Authors: Fatemeh Hateffard and Luc Steinbuch. Latest update: March 2023.
 You can install the development version of DSM like so:
 
 ``` r
-devtools::install_git('')
+devtools::install_github("Negarhtf/DSM")
 ```
 
 ## Example
